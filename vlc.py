@@ -1,5 +1,4 @@
 import os
-import path
 import sys
 import subprocess
 from pathlib import Path
@@ -14,7 +13,7 @@ else:
     if not os.path.isfile(VLC_PATH):
         VLC_PATH = "vlc"
 
-black_path = path.join(Path().absolute(), "black.png")
+black_path = os.path.join(Path().absolute(), "black.png")
 
 default_vlc_params = [
     VLC_PATH,
