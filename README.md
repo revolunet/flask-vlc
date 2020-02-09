@@ -30,10 +30,23 @@ curl "http://127.0.0.1:5000/text/hello%20world%200x0001F607?color=0xff0000&durat
 
 ## Raspi setup
 
+### Create the SD card
+
+Utiliser Raspbian Desktop https://www.raspberrypi.org/downloads/raspbian
+Login : pi / raspberry
+
+- Activer ssh en créant un fichier `.ssh` à la racine
+- Installer le service VNC
+- Disable toolbar and screensaver in `/etc/xdg/lxsession/LXDE-pi/autostart`
+
 ```
 venv .venv
-python3 ./.venv/bin/activate
+sh ./.venv/bin/activate
 python3 -m pip install -r requirements.txt
 python3 server.py
+
 ```
 
+```
+
+```
