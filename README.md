@@ -39,10 +39,15 @@ Login : pi / raspberry
 
 #### Au 1er démarrage :
 
-- Disable toolbar and screensaver in `/etc/xdg/lxsession/LXDE-pi/autostart`
-- add `@/usr/bin/python3 /home/pi/flask-vlc/server.py` in `/etc/xdg/lxsession/LXDE-pi/autostart`
 - Mettre le hostname à "video"
 - [Désactiver le pointeur souris](https://raspberrypi.stackexchange.com/a/10415)
+
+#### /etc/xdg/lxsession/LXDE-pi/autostart
+
+```
+@/usr/bin/pqiv -f -i /home/pi/wallpaper.png
+@/usr/bin/python3 /home/pi/flask-vlc/server.py
+```
 
 ### Cloner le projet dans /home/pi/flask-vlc
 
@@ -54,6 +59,3 @@ python3 -m pip install -r requirements.txt
 
 Au prochain reboot, le serveur sera dispo sur `http://video.local:5000/`
 
-```
-
-```

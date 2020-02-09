@@ -8,7 +8,11 @@ CORS(app)
 @app.route("/")
 def home():
     print("home")
-    return jsonify({"success": True})
+    return jsonify({
+      "success": True,
+      "example_red_text": request.url_root + "text/Hello%20World%20!?duration=5&color=0xFF0000",
+      "example_remote_video": request.url_root + "play/http://techslides.com/demos/sample-videos/small.mp4",
+      })
 
 @app.route("/play/<path:url>")
 def play(url):
