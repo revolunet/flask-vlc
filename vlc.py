@@ -20,6 +20,10 @@ default_vlc_params = [
     "--no-video-title-show",
 ]
 
+if sys.platform != "darwin":
+  default_vlc_params.append("--intf")
+  default_vlc_params.append("dummy")
+
 def marquee(message, color, position):
     return (
         'marq{marquee="' + message + '",color=' + color + ",position=" + position + "}"

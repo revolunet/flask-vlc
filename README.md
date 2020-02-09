@@ -36,16 +36,22 @@ Utiliser Raspbian Desktop https://www.raspberrypi.org/downloads/raspbian
 Login : pi / raspberry
 
 - Activer ssh en créant un fichier `.ssh` à la racine
-- Installer le service VNC
+
+#### Au 1er démarrage :
+
 - Disable toolbar and screensaver in `/etc/xdg/lxsession/LXDE-pi/autostart`
+- add `@/usr/bin/python3 /home/pi/flask-vlc/server.py` in `/etc/xdg/lxsession/LXDE-pi/autostart`
+- Mettre le hostname à "video"
+
+### Cloner le projet dans /home/pi/flask-vlc
 
 ```
-venv .venv
-sh ./.venv/bin/activate
+git clone https://github.com/revolunet/flask-vlc
+cd flask-vlc
 python3 -m pip install -r requirements.txt
-python3 server.py
-
 ```
+
+Au prochain reboot, le serveur sera dispo sur `http://video.local:5000/`
 
 ```
 
