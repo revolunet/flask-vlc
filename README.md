@@ -42,6 +42,7 @@ Login : pi / raspberry
 - Disable toolbar and screensaver in `/etc/xdg/lxsession/LXDE-pi/autostart`
 - add `@/usr/bin/python3 /home/pi/flask-vlc/server.py` in `/etc/xdg/lxsession/LXDE-pi/autostart`
 - Mettre le hostname à "video"
+- [Désactiver le pointeur souris](https://raspberrypi.stackexchange.com/a/10415)
 
 ### Cloner le projet dans /home/pi/flask-vlc
 

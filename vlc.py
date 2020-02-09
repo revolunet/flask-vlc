@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 if os.getenv("VLC_PATH"):
     VLC_PATH = os.getenv("VLC_PATH")
@@ -11,6 +12,8 @@ else:
         VLC_PATH = "/usr/bin/vlc"
     if not os.path.isfile(VLC_PATH):
         VLC_PATH = "vlc"
+
+black_path = path.join(Path().absolute(), "black.png")
 
 default_vlc_params = [
     VLC_PATH,
@@ -42,7 +45,7 @@ def vlc_text(message, color="0x00FF00", position="0", duration="10"):
             duration,
             "--sub-source",
             marquee(message, color, position),
-            "black.png",
+            black_path,
             "vlc://quit",
         ]
     )
