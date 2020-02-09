@@ -32,12 +32,19 @@ def marquee(message, color, position):
         'marq{marquee="' + message + '",color=' + color + ",position=" + position + "}"
     )
 
+def vlc_kill():
+    subprocess.call(
+        ["pkill", "vlc"]
+    )
+
 def vlc_play(url):
+    vlc_kill()
     subprocess.call(
         [*default_vlc_params, url, "vlc://quit",]
     )
 
 def vlc_text(message, color="0x00FF00", position="0", duration="10"):
+    vlc_kill()
     subprocess.call(
         [
             *default_vlc_params,
