@@ -22,7 +22,7 @@ curl "http://127.0.0.1:5000/play/local.mp4"
 curl "http://127.0.0.1:5000/play/http://techslides.com/demos/sample-videos/small.mp4"
 
 # Show a text message
-curl "http://127.0.0.1:5000/text/hello%20world%200x0001F607?color=0xff0000&duration=5"
+curl "http://127.0.0.1:5000/text/hello%20world?color=0xff0000&duration=5"
 
 ```
 
