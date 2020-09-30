@@ -46,6 +46,7 @@ Login : pi / raspberry
 #### Au 1er démarrage :
 
 - Mettre le hostname à "video"
+- Customiser /home/pi/wallpaper.png
 - [Désactiver le pointeur souris](https://raspberrypi.stackexchange.com/a/10415)
 
 #### /etc/xdg/lxsession/LXDE-pi/autostart
@@ -64,4 +65,3 @@ python3 -m pip install -r requirements.txt
 ```
 
 Au prochain reboot, le serveur sera dispo sur `http://video.local:5000/`
-
