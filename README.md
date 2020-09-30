@@ -28,6 +28,12 @@ curl "http://127.0.0.1:5000/text/hello%20world%200x0001F607?color=0xff0000&durat
 
 ⚠ Be sure to url encode the text message
 
+## Security
+
+Anyone with access to this API can control the screen or execute random command on the player.
+
+You need to secure your network or access to this device via iptables or your preferred filtering mechanism.
+
 ## Raspi setup
 
 ### Create the SD card
