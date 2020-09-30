@@ -23,24 +23,24 @@ default_vlc_params = [
 ]
 
 if sys.platform != "darwin":
-  default_vlc_params.append("--intf")
-  default_vlc_params.append("dummy")
+    default_vlc_params.append("--intf")
+    default_vlc_params.append("dummy")
+
 
 def marquee(message, color, position):
     return (
         'marq{marquee="' + message + '",color=' + color + ",position=" + position + "}"
     )
 
+
 def vlc_kill():
-    subprocess.call(
-        ["pkill", "vlc"]
-    )
+    subprocess.call(["pkill", "vlc"])
+
 
 def vlc_play(url):
     vlc_kill()
-    subprocess.call(
-        [*default_vlc_params, url, "vlc://quit",]
-    )
+    subprocess.call([*default_vlc_params, url, "vlc://quit"])
+
 
 def vlc_text(message, color="0x00FF00", position="0", duration="10"):
     vlc_kill()
@@ -49,6 +49,8 @@ def vlc_text(message, color="0x00FF00", position="0", duration="10"):
             *default_vlc_params,
             "--image-duration",
             duration,
+            "--input-slave",
+            "notification.mp3",
             "--sub-source",
             marquee(message, color, position),
             black_path,
