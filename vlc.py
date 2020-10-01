@@ -50,7 +50,7 @@ def vlc_text(message, color="0x00FF00", position="0", duration="10"):
             "--image-duration",
             duration,
             "--input-slave",
-            "notification.mp3",
+            "notification.ogg",
             "--sub-source",
             marquee(message, color, position),
             black_path,
